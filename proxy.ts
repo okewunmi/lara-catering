@@ -5,7 +5,7 @@ import { NextResponse, type NextRequest } from "next/server";
  * Protects every /admin route except /admin/login.
  * Anyone without a valid Supabase session is redirected to the login page.
  */
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const response = NextResponse.next({ request });
 
   const supabase = createServerClient(
