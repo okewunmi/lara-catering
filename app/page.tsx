@@ -53,7 +53,7 @@ export default function Home() {
       </section>
 
       {/* What we do — plain text list with dividers, not icon cards */}
-      <section className="border-y border-plum/10 bg-cream-deep">
+      {/* <section className="border-y border-plum/10 bg-cream-deep">
         <div className="mx-auto flex max-w-6xl flex-wrap gap-x-10 gap-y-4 px-6 py-6 text-sm text-plum/70">
           {services.map((service, i) => (
             <span key={service.id} className="flex items-center gap-10">
@@ -62,7 +62,30 @@ export default function Home() {
             </span>
           ))}
         </div>
-      </section>
+      </section> */}
+      
+      {/* What we do — an editorial numbered listing, not icon cards or a wrapped text strip */}
+<section className="border-y border-plum/10 bg-cream-deep">
+  <div className="mx-auto max-w-6xl px-6 py-16">
+    <p className="text-sm uppercase tracking-[0.2em] text-amber-deep">What we do</p>
+
+    <div className="mt-8 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+      {services.map((service, i) => (
+        <div key={service.id} className="border-t border-plum/10 pt-5">
+          <div className="flex items-baseline gap-3">
+            <span className="font-display text-base text-amber-deep">
+              {String(i + 1).padStart(2, "0")}
+            </span>
+            <p className="font-display text-lg text-plum">{service.name}</p>
+          </div>
+          <p className="mt-2 text-sm leading-relaxed text-plum/60">
+            {service.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Gallery preview */}
       <section className="mx-auto max-w-6xl px-6 py-20">

@@ -34,7 +34,14 @@ export function AdminGalleryList({ items }: { items: GalleryRow[] }) {
     <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 md:grid-cols-6">
       {items.map((item) => (
         <div key={item.id} className="group relative aspect-square overflow-hidden rounded-xl bg-cream-deep">
-          <Image src={publicUrl(item.image_path)} alt={item.title} fill className="object-cover" />
+          {/* <Image src={publicUrl(item.image_path)} alt={item.title} fill className="object-cover" /> */}
+          <Image
+  src={publicUrl(item.image_path)}
+  alt={item.title}
+  fill
+  className="object-cover"
+  sizes="(min-width: 768px) 16vw, (min-width: 640px) 25vw, 50vw"
+/>
           <button
             onClick={() => handleDelete(item)}
             className="absolute right-2 top-2 rounded-full bg-plum/80 px-2 py-1 text-xs text-ivory opacity-0 transition-opacity group-hover:opacity-100"

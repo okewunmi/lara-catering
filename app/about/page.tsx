@@ -24,7 +24,14 @@ export default function AboutPage() {
       </div>
 
       <div className="relative aspect-square overflow-hidden rounded-3xl bg-blush-soft">
-        <Image src="/logo.svg" alt="Lara Cake & Treats logo" fill className="object-contain p-12" />
+        {/* <Image src="/logo.svg" alt="Lara Cake & Treats logo" fill className="object-contain p-12" /> */}
+        <Image
+  src="/logo.svg"
+  alt="Lara Cake & Treats logo"
+  fill
+  className="object-contain p-12"
+  sizes="(min-width: 768px) 480px, 100vw"
+/>
       </div>
     </div>
   );
