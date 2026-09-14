@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+/*
+  Brand tokens — Lara Cake & Treats
+  Pulled from the logo (blush pink circle, deep plum line art)
+  and the existing flyer (warm amber/gold).
+*/
+:root {
+  --color-cream: #fbf3ec;      /* page background — warm ivory, not generic grey-cream */
+  --color-cream-deep: #f4e4d8; /* section alternation */
+  --color-blush: #f3c6d6;      /* logo pink */
+  --color-blush-soft: #fadde6;
+  --color-plum: #2b1420;       /* logo ink — primary text + dark sections */
+  --color-plum-soft: #4a2536;
+  --color-amber: #d98f33;      /* warm gold accent, from the jollof/flyer palette */
+  --color-amber-deep: #b06f22;
+  --color-ivory: #fffaf5;
+}
+
+@theme inline {
+  --color-cream: var(--color-cream);
+  --color-cream-deep: var(--color-cream-deep);
+  --color-blush: var(--color-blush);
+  --color-blush-soft: var(--color-blush-soft);
+  --color-plum: var(--color-plum);
+  --color-plum-soft: var(--color-plum-soft);
+  --color-amber: var(--color-amber);
+  --color-amber-deep: var(--color-amber-deep);
+  --color-ivory: var(--color-ivory);
+  --font-display: var(--font-fraunces);
+  --font-body: var(--font-work-sans);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-plum);
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+}
+
+h1, h2, h3, h4,
+.font-display {
+  font-family: var(--font-display), ui-serif, Georgia, serif;
+}
+
+/* Visible keyboard focus everywhere — accessibility floor */
+:focus-visible {
+  outline: 2px solid var(--color-amber-deep);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
