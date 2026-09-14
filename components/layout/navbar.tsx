@@ -100,7 +100,7 @@ export function Navbar() {
     <header className="sticky top-0 z-40 border-b border-plum/10 bg-cream/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center gap-2 font-display text-2xl tracking-wide text-plum">
-          <Image src="/logo.png" alt="Lara Cake & Treats" width={44} height={44} className="h-11 w-11 object-contain" />
+          <Image src="/logo.png" alt="Lara Cake & Treats" width={50} height={50} className="h-14 w-14 object-contain" />
           {/* Lara <span className="text-amber-deep">Cake &amp; Treats</span> */}
         </Link>
 
