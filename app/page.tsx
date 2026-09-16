@@ -52,17 +52,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* What we do — plain text list with dividers, not icon cards */}
-      {/* <section className="border-y border-plum/10 bg-cream-deep">
-        <div className="mx-auto flex max-w-6xl flex-wrap gap-x-10 gap-y-4 px-6 py-6 text-sm text-plum/70">
-          {services.map((service, i) => (
-            <span key={service.id} className="flex items-center gap-10">
-              {service.name}
-              {i < services.length - 1 && <span className="hidden text-plum/20 sm:inline">/</span>}
-            </span>
-          ))}
-        </div>
-      </section> */}
+     
       
       {/* What we do — an editorial numbered listing, not icon cards or a wrapped text strip */}
 <section className="border-y border-plum/10 bg-cream-deep">
