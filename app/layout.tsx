@@ -105,7 +105,7 @@ const workSans = Work_Sans({
   subsets: ["latin"],
 });
 
-const siteUrl = "https://laracakeandtreats.com"; // TODO: replace with the real domain once live
+const siteUrl = "https://laratreats.com.ng"; // TODO: replace with the real domain once live
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
