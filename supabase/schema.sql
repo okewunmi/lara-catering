@@ -75,3 +75,23 @@ create policy "Admins can manage testimonials" on testimonials
 
 -- Storage bucket for gallery images (create via Supabase dashboard or SQL):
 -- insert into storage.buckets (id, name, public) values ('gallery', 'gallery', true);
+
+-- Storage policies for the "gallery" bucket.
+-- Without these, even a logged-in admin can't upload/delete files —
+-- the bucket's "public" flag only controls read access, not writes.
+-- Run these once in the Supabase SQL editor if you haven't already.
+create policy "Public can view gallery bucket files"
+  on storage.objects for select
+  using ( bucket_id = 'gallery' );
+
+create policy "Authenticated users can upload to gallery bucket"
+  on storage.objects for insert
+  with check ( bucket_id = 'gallery' and auth.role() = 'authenticated' );
+
+create policy "Authenticated users can update gallery bucket files"
+  on storage.objects for update
+  using ( bucket_id = 'gallery' and auth.role() = 'authenticated' );
+
+create policy "Authenticated users can delete gallery bucket files"
+  on storage.objects for delete
+  using ( bucket_id = 'gallery' and auth.role() = 'authenticated' );

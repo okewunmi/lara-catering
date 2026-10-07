@@ -24,8 +24,11 @@ export function Footer() {
         <div>
           <p className="text-sm uppercase tracking-wide text-cream/50">Explore</p>
           <div className="mt-3 flex flex-col gap-2 text-sm text-cream/80">
-            <Link href="/gallery">Gallery</Link>
             <Link href="/services">Services &amp; pricing</Link>
+            <Link href="/cakes">Birthday &amp; celebration cakes</Link>
+            <Link href="/small-chops">Small chops</Link>
+            <Link href="/event-catering">Event catering in Lagos</Link>
+            <Link href="/gallery">Gallery</Link>
             <Link href="/booking">Book an event</Link>
           </div>
         </div>

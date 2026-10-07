@@ -1,14 +1,18 @@
 import type { Metadata } from "next";
+import { SITE_URL } from "@/lib/seo/site";
 import { GalleryGrid } from "@/components/gallery/gallery-grid";
-import { galleryItems } from "@/lib/mock/data";
+import { getGalleryItems } from "@/lib/data/gallery";
 
 export const metadata: Metadata = {
+  alternates: { canonical: `${SITE_URL}/gallery` },
   title: "Gallery",
   description:
     "Browse cakes, small chops, buffet dishes, and drinks from past events by Lara Cake & Treats in Agege, Lagos.",
 };
 
-export default function GalleryPage() {
+export default async function GalleryPage() {
+  const galleryItems = await getGalleryItems();
+
   return (
     <div className="mx-auto max-w-6xl px-6 py-16">
       <h1 className="font-display text-4xl text-plum">Gallery</h1>

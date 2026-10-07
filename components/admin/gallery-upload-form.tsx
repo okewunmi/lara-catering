@@ -13,12 +13,14 @@ export function GalleryUploadForm() {
   const [category, setCategory] = useState(categories[0]);
   const [file, setFile] = useState<File | null>(null);
   const [status, setStatus] = useState<"idle" | "uploading" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!file) return;
 
     setStatus("uploading");
+    setErrorMessage(null);
     const supabase = createClient();
 
     // 1. Upload the file to the "gallery" storage bucket
@@ -28,6 +30,8 @@ export function GalleryUploadForm() {
       .upload(filePath, file);
 
     if (uploadError) {
+      console.error("Gallery upload failed:", uploadError);
+      setErrorMessage(uploadError.message);
       setStatus("error");
       return;
     }
@@ -40,6 +44,8 @@ export function GalleryUploadForm() {
     });
 
     if (insertError) {
+      console.error("Gallery item insert failed:", insertError);
+      setErrorMessage(insertError.message);
       setStatus("error");
       return;
     }
@@ -95,7 +101,7 @@ export function GalleryUploadForm() {
 
       {status === "error" && (
         <p className="col-span-full text-sm text-red-600">
-          Something went wrong uploading that photo — try again.
+          {errorMessage || "Something went wrong uploading that photo — try again."}
         </p>
       )}
     </form>

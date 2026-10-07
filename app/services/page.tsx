@@ -1,15 +1,19 @@
 import type { Metadata } from "next";
+import { SITE_URL } from "@/lib/seo/site";
 import { Button } from "@/components/ui/button";
-import { services } from "@/lib/mock/data";
+import { getServices } from "@/lib/data/services";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 
 export const metadata: Metadata = {
+  alternates: { canonical: `${SITE_URL}/services` },
   title: "Services & Pricing",
   description:
     "Cakes, small chops, buffet catering, drinks, pastries, and shawarma for events in Lagos — starting prices and booking.",
 };
 
-export default function ServicesPage() {
+export default async function ServicesPage() {
+  const services = await getServices();
+
   return (
     <div className="mx-auto max-w-6xl px-6 py-16">
       <h1 className="font-display text-4xl text-plum">Services &amp; pricing</h1>
