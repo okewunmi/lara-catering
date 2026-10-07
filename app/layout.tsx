@@ -113,6 +113,10 @@ export const metadata: Metadata = {
     default: "Lara Cake & Treats | Cakes, Small Chops & Catering in Lagos",
     template: "%s | Lara Cake & Treats",
   },
+  verification: {
+    google: "DXrf4z7CpreHl-C17R7i2Egdv99RsSAbB24XlzRxk-8",
+  },
+  // <meta name="google-site-verification" content="DXrf4z7CpreHl-C17R7i2Egdv99RsSAbB24XlzRxk-8" />
   description: SITE_DESCRIPTION,
   applicationName: SITE_NAME,
   keywords: [
